@@ -1,0 +1,109 @@
+:root {
+  color-scheme: dark;
+  --bg: #07111f;
+  --panel: #101d2e;
+  --line: #2a3a50;
+  --text: #f6f8fb;
+  --muted: #9caec3;
+  --green: #34d399;
+  --amber: #fbbf24;
+  --blue: #2f8cff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #122944 0, var(--bg) 40rem);
+  color: var(--text);
+  font: 15px/1.35 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+button, textarea { font: inherit; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 12px;
+  padding: max(14px, env(safe-area-inset-top)) 16px 12px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(7, 17, 31, .94);
+  backdrop-filter: blur(12px);
+}
+h1 { margin: 0; font-size: 24px; }
+header p { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+header button, nav button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 11px;
+  background: var(--panel);
+  color: var(--muted);
+  white-space: nowrap;
+}
+nav {
+  display: flex;
+  gap: 7px;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 12px 12px 4px;
+  overflow-x: auto;
+}
+nav button.active { border-color: var(--blue); color: white; background: #16345a; }
+main { max-width: 720px; margin: 0 auto; padding: 8px 12px 30px; }
+.card {
+  margin: 10px 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: linear-gradient(150deg, #16263a, var(--panel));
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .2);
+}
+.card.done { border-color: rgba(52, 211, 153, .75); opacity: .72; }
+.shot {
+  width: 100%;
+  height: 135px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: white;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 24%; }
+.body { padding: 14px; }
+.title-row { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+h2 { margin: 0; font-size: 19px; line-height: 1.15; }
+.price { color: var(--green); font-size: 17px; font-weight: 800; white-space: nowrap; }
+.ids { margin: 5px 0 10px; color: var(--muted); font-size: 12px; }
+.inventory { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.count { padding: 8px 4px; text-align: center; border-radius: 10px; background: #081423; }
+.count strong { display: block; font-size: 22px; }
+.count span { color: var(--muted); font-size: 10px; text-transform: uppercase; }
+.count.back strong { color: var(--amber); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 9px 0; }
+.meta span { padding: 3px 7px; border-radius: 999px; color: var(--muted); background: #081423; font-size: 11px; }
+.inferred { color: var(--amber); font-size: 11px; margin: -2px 0 8px; }
+.barcode-wrap {
+  margin: 10px 0;
+  padding: 8px 5px 4px;
+  border-radius: 10px;
+  background: white;
+  color: black;
+  text-align: center;
+  overflow: hidden;
+}
+.barcode-wrap svg { display: block; width: 100%; max-height: 112px; }
+.barcode-note { margin-top: 2px; font-size: 10px; color: #333; }
+.controls { display: grid; grid-template-columns: auto 1fr; gap: 8px; align-items: stretch; }
+.status { display: flex; align-items: center; gap: 7px; padding: 9px; border: 1px solid var(--line); border-radius: 10px; font-weight: 700; }
+.status input { width: 20px; height: 20px; accent-color: var(--green); }
+textarea { min-height: 46px; resize: vertical; padding: 8px; border: 1px solid var(--line); border-radius: 10px; background: #081423; color: white; }
+dialog { width: min(96vw, 720px); height: min(96vh, 1100px); padding: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); }
+dialog::backdrop { background: rgba(0, 0, 0, .85); }
+dialog img { width: 100%; height: 100%; object-fit: contain; }
+.close { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; border: 0; border-radius: 50%; background: rgba(0,0,0,.78); color: white; font-size: 25px; }
+.empty { padding: 40px 12px; text-align: center; color: var(--muted); }
+@media (min-width: 850px) {
+  main { max-width: 1400px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .card { margin: 0; }
+}

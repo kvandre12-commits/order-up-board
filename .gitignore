@@ -1,0 +1,7 @@
+# Full-resolution source screenshots stay on the phone.
+assets/*.jpg
+
+# Local runtime noise.
+__pycache__/
+*.pyc
+server.pid

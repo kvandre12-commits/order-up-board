@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <title>Order Up — Meat & Seafood</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Order Up</h1>
+      <p>Meat &amp; Seafood · if it ain’t in the steel, we gotta buy more</p>
+    </div>
+    <button id="reset" type="button">Clear checks</button>
+  </header>
+
+  <nav aria-label="Item filters">
+    <button class="active" data-filter="all">All <strong>29</strong></button>
+    <button data-filter="back">Backroom <strong>10</strong></button>
+    <button data-filter="zero">Zero OH <strong>3</strong></button>
+    <button data-filter="open">Unchecked</button>
+  </nav>
+
+  <main id="board"></main>
+
+  <dialog id="viewer">
+    <button class="close" type="button" aria-label="Close screenshot">×</button>
+    <img alt="Original MyWalmart screenshot">
+  </dialog>
+
+  <script src="data.js?v=2"></script>
+  <script src="app.js?v=2"></script>
+</body>
+</html>
